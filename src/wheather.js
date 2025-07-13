@@ -226,7 +226,7 @@ function findId(currentIcon) {
     return (currentId = "V4ErRLRQG2lfKOjIht");
   } else if (currentIcon === "partly-cloudy-day") {
     return (currentId = "OB3gdVEUzUegDzhgPb");
-  } else if (currentIcon === "party-cloudy-night") {
+  } else if (currentIcon === "partly-cloudy-night") {
     return (currentId = "c2D2388XDMGVwUeD90");
   } else if (currentIcon === "clear-day") {
     return (currentId = "wGiDflDuxNx4keYKcb");
