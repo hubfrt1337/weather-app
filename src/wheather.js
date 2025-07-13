@@ -179,11 +179,13 @@ async function getIcon(name) {
   try {
     const res = await fetch(url);
     const data = await res.json();
-    for (let i = 0; i < iconsArray.length; i++) {
+    console.log(data)
+    for (let i = 0; i < 6; i++) {
+      console.log(data.days[i].icon)
       const currentId = findId(data.days[i].icon);
-      const response = await fetch(
-        `https://api.giphy.com/v1/gifs/${currentId}?api_key=tUl7YdgQWIEQr5EAdB9l7F5pWOnVZM6n`,
-      );
+      console.log(currentId);
+      const response = await fetch(`https://api.giphy.com/v1/gifs/${currentId}?api_key=tUl7YdgQWIEQr5EAdB9l7F5pWOnVZM6n`);
+      console.log(response)
       let datas;
       switch (response.status) {
         case 200:
@@ -191,7 +193,7 @@ async function getIcon(name) {
           break;
         case 404:
           console.warn("Nie znaleziono Url, błędne miasto");
-          getIcon("Poznan");
+          //getIcon("Poznan");
           break;
         case 429:
           console.warn("Too many requests");
@@ -222,7 +224,7 @@ function findId(currentIcon) {
     return (currentId = "lnJcK0KjOYwrnlN1iI");
   } else if (currentIcon === "cloudy") {
     return (currentId = "V4ErRLRQG2lfKOjIht");
-  } else if (currentIcon === "party-cloudy-day") {
+  } else if (currentIcon === "partly-cloudy-day") {
     return (currentId = "OB3gdVEUzUegDzhgPb");
   } else if (currentIcon === "party-cloudy-night") {
     return (currentId = "c2D2388XDMGVwUeD90");
