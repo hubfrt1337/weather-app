@@ -1,0 +1,277 @@
+:root {
+  --cloudy: #192b85;
+  --sunny: #f9f871;
+  --greeny: #bffb89;
+  --cloudyy: #3e4d98;
+  --lightcloudy: #cbf2fa;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--lightcloudy);
+}
+main {
+  display: grid;
+  place-items: center;
+}
+.wheather-today-container {
+  display: flex;
+  background-color: var(--cloudy);
+  color: white;
+  width: 90vw;
+  flex-direction: column;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+}
+.header-today-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+  align-items: center;
+}
+.city {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.finder {
+  width: 200px;
+  position: relative;
+}
+.finder > input {
+  width: 100%;
+  padding: 0.3rem;
+}
+#search {
+  cursor: pointer;
+  position: absolute;
+  height: 80%;
+  right: 2px;
+  text-align: center;
+  top: 2px;
+}
+.today-info-container {
+  display: grid;
+  background-color: var(--cloudyy);
+  margin-top: 1rem;
+  grid-template-columns: 100px 100px 1fr;
+  grid-template-rows: 120px;
+  padding: 1rem;
+  place-items: center;
+  border-radius: 0.5rem;
+}
+.temperature {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+.inner-details-container {
+  display: flex;
+  margin-top: 0.6rem;
+  gap: 3rem;
+}
+.status {
+  padding: 0.3rem;
+}
+.perceived,
+.pressure,
+.wind {
+  display: flex;
+  flex-direction: column;
+  padding: 0.2rem;
+}
+
+/* all days / second container */
+
+.all-days-container {
+  margin-top: 3rem;
+  display: grid;
+  background-color: var(--cloudyy);
+  height: 500px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  width: 90vw;
+  grid-template-columns: 50px 1fr 50px;
+  grid-template-rows: 50px 1fr 50px;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+.date {
+  display: flex;
+  justify-content: space-around;
+  place-items: center;
+  grid-area: 1 / 2 / 2 / 3;
+  background-color: var(--cloudyy);
+  font-size: 0.7rem;
+}
+.wykres {
+  grid-area: 2 / 1 / 3 / 2;
+  background-color: var(--cloudyy);
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 3rem;
+  color: white;
+}
+
+.inside {
+  position: relative;
+  grid-area: 2 / 2 / 3 / 3;
+  background-color: var(--lightcloudy);
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  border-radius: 0.5rem;
+}
+
+.inside > div {
+  border-right: solid 1px black;
+}
+.left-arrow {
+  color: var(--sunny);
+  font-weight: bold;
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: -1.7rem;
+  cursor: pointer;
+}
+.right-arrow {
+  position: absolute;
+  font-weight: bold;
+  font-size: 1.5rem;
+  bottom: -1.7rem;
+  right: 0px;
+  color: var(--sunny);
+  cursor: pointer;
+}
+
+.right {
+  grid-area: 1 / 3 / 4 / 4;
+  background-color: var(--cloudyy);
+  margin-right: 2rem;
+}
+.bottom {
+  grid-area: 3 / 2 / 4 / 3;
+  background-color: var(--cloudyy);
+}
+.container-days {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.container-days > :nth-child(1) {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+.temp-and-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.icon-uppon-temp > img {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+.err-text {
+  display: none;
+}
+.err-text-show {
+  display: block;
+  position: absolute;
+  left: 5px;
+  color: red;
+}
+
+@media screen and (max-width: 800px) {
+  .inside {
+    grid-template-columns: repeat(10, 1fr);
+  }
+  .inside > :nth-child(11),
+  .inside > :nth-child(12),
+  .inside > :nth-child(13),
+  .inside > :nth-child(14),
+  .inside > :nth-child(15) {
+    display: none;
+  }
+  .all-days-container {
+    height: 400px;
+    grid-template-columns: 30px 1fr 30px;
+    grid-template-rows: 30px 1fr 30px;
+  }
+  .wykres-temp {
+    font-size: 0.8rem;
+  }
+
+  .today-info-container {
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.3rem;
+  }
+  .details-container {
+    grid-area: 2 / 1 / 3 / 3;
+    justify-self: left;
+  }
+
+  .city {
+    font-size: 1.5rem;
+  }
+  .finder {
+    width: 150px;
+    font-size: 0.8rem;
+  }
+  #iconJs {
+    width: 50px;
+    height: 50px;
+  }
+  .temperature {
+    font-size: 1.8rem;
+    justify-self: left;
+  }
+  .inner-details-container {
+    gap: 1rem;
+  }
+  .status {
+    font-size: 1rem;
+  }
+  .perceived,
+  .pressure,
+  .wind {
+    font-size: 0.8rem;
+  }
+  .icon-uppon-temp > img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .all-days-container {
+    height: 350px;
+  }
+  .inside {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .inside > :nth-child(6),
+  .inside > :nth-child(7),
+  .inside > :nth-child(8),
+  .inside > :nth-child(9),
+  .inside > :nth-child(10),
+  .inside > :nth-child(11),
+  .inside > :nth-child(12),
+  .inside > :nth-child(13),
+  .inside > :nth-child(14),
+  .inside > :nth-child(15) {
+    display: none;
+  }
+
+  .temperature {
+    font-size: 1.5rem;
+  }
+  .inner-details-container {
+    gap: 0.3rem;
+  }
+}

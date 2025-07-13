@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <div class="wheather-today-container">
+        <div class="header-today-container">
+          <div class="city">Poznań</div>
+          <div class="finder">
+            <input type="text" id="finder" placeholder="Enter city name" />
+            <img src="./images/search.png" id="search" />
+            <div class="err-text">City not found</div>
+          </div>
+        </div>
+        <div class="wheather-today-info">Wheater-now-today godz. 15:49</div>
+        <div class="today-info-container">
+          <div class="icon">
+            <img id="iconJs" alt="" />
+          </div>
+          <div class="temperature">24</div>
+          <div class="details-container">
+            <div class="status">Partially cloudly</div>
+            <div class="inner-details-container">
+              <div class="perceived">
+                <div class="title">Perceived</div>
+                <div class="text" id="perceivedId">15C</div>
+              </div>
+              <div class="pressure">
+                <div class="title">Pressure</div>
+                <div class="text" id="pressureId">12</div>
+              </div>
+              <div class="wind">
+                <div class="title">Wind speed</div>
+                <div class="text" id="windId">1111</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="all-days-container">
+        <div class="date"></div>
+        <div class="wykres">
+          <div class="wykres-temp">12°C</div>
+          <div class="wykres-temp">16°C</div>
+          <div class="wykres-temp">21°C</div>
+          <div class="wykres-temp">25°C</div>
+          <div class="wykres-temp">29°C</div>
+          <div class="wykres-temp">33°C</div>
+          <div class="wykres-temp">37°C</div>
+        </div>
+        <div class="inside">
+          <!-- <p class="left-arrow leftArrowJs">&lt</p>
+          <p class="right-arrow rightArrowJs">&gt</p> -->
+          <div class="container-days">
+            <div id="data0">07-11</div>
+            <div class="temp-and-icon temp-and-icon0">
+              <div class="icon-uppon-temp ico0">
+                <img id="icon0" alt="" />
+              </div>
+              <div class="temp-under-icon temp0"></div>
+            </div>
+          </div>
+          <div class="container-days">
+            <div id="data1">07-11</div>
+            <div class="temp-and-icon">
+              <div class="icon-uppon-temp ico0">
+                <img id="icon1" alt="" />
+              </div>
+              <div class="temp-under-icon temp1"></div>
+            </div>
+          </div>
+          <div class="container-days">
+            <div id="data2">07-11</div>
+            <div class="temp-and-icon">
+              <div class="icon-uppon-temp ico1">
+                <img id="icon2" alt="" />
+              </div>
+              <div class="temp-under-icon temp2"></div>
+            </div>
+          </div>
+          <div class="container-days">
+            <div id="data3">07-11</div>
+            <div class="temp-and-icon">
+              <div class="icon-uppon-temp ico2">
+                <img id="icon3" alt="" />
+              </div>
+              <div class="temp-under-icon temp3"></div>
+            </div>
+          </div>
+          <div class="container-days">
+            <div id="data4">07-11</div>
+            <div class="temp-and-icon">
+              <div class="icon-uppon-temp ico2">
+                <img id="icon4" alt="" />
+              </div>
+              <div class="temp-under-icon temp4"></div>
+            </div>
+          </div>
+          <div class="container-days">
+            <div id="data5">07-11</div>
+            <div class="temp-and-icon">
+              <div class="icon-uppon-temp ico2">
+                <img id="icon5" alt="" />
+              </div>
+              <div class="temp-under-icon temp5"></div>
+            </div>
+          </div>
+          <div class="container-days">
+            <div id="data6">07-11</div>
+            <div class="temp-and-icon">
+              <div class="icon-uppon-temp ico2">
+                <img id="icon6" alt="" />
+              </div>
+              <div class="temp-under-icon temp6"></div>
+            </div>
+          </div>
+          <div class="container-days">
+            <div id="data7">07-11</div>
+            <div class="temp-and-icon">
+              <div class="icon-uppon-temp ico2">
+                <img id="icon7" alt="" />
+              </div>
+              <div class="temp-under-icon temp7"></div>
+            </div>
+          </div>
+          <div class="container-days">
+            <div id="data8">07-11</div>
+            <div class="temp-and-icon">
+              <div class="icon-uppon-temp ico2">
+                <img id="icon8" alt="" />
+              </div>
+              <div class="temp-under-icon temp8"></div>
+            </div>
+          </div>
+          <div class="container-days">
+            <div id="data9">07-11</div>
+            <div class="temp-and-icon">
+              <div class="icon-uppon-temp ico2">
+                <img id="icon9" alt="" />
+              </div>
+              <div class="temp-under-icon temp9"></div>
+            </div>
+          </div>
+          <div class="container-days">
+            <div id="data10">07-11</div>
+            <div class="temp-and-icon">
+              <div class="icon-uppon-temp ico2">
+                <img id="icon10" alt="" />
+              </div>
+              <div class="temp-under-icon temp10"></div>
+            </div>
+          </div>
+          <div class="container-days">
+            <div id="data11">07-11</div>
+            <div class="temp-and-icon">
+              <div class="icon-uppon-temp ico2">
+                <img id="icon11" alt="" />
+              </div>
+              <div class="temp-under-icon temp11"></div>
+            </div>
+          </div>
+          <div class="container-days">
+            <div id="data12">07-11</div>
+            <div class="temp-and-icon">
+              <div class="icon-uppon-temp ico2">
+                <img id="icon12" alt="" />
+              </div>
+              <div class="temp-under-icon temp12"></div>
+            </div>
+          </div>
+          <div class="container-days">
+            <div id="data13">07-11</div>
+            <div class="temp-and-icon">
+              <div class="icon-uppon-temp ico2">
+                <img id="icon13" alt="" />
+              </div>
+              <div class="temp-under-icon temp13"></div>
+            </div>
+          </div>
+          <div class="container-days">
+            <div id="data14">07-11</div>
+            <div class="temp-and-icon">
+              <div class="icon-uppon-temp ico2">
+                <img id="icon14" alt="" />
+              </div>
+              <div class="temp-under-icon temp14"></div>
+            </div>
+          </div>
+        </div>
+        <div class="right"></div>
+        <div class="bottom"></div>
+      </div>
+    </main>
+  </body>
+</html>
