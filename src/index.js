@@ -1,2 +1,2 @@
-import "./wheather.js";
+import "./weather.js";
 import "./styles/style.css";

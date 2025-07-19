@@ -1,3 +1,4 @@
+import { API_KEY, KEY } from "./config.js";
 const city = document.querySelector(".city");
 const finderInput = document.getElementById("finder");
 const info = document.querySelector(".wheather-today-info");
@@ -120,7 +121,7 @@ async function getWheater(name) {
   } else {
     cityName = name;
   }
-  const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${cityName}?unitGroup=metric&key=6Q793XTBFCDYVQ5E635KCRYQC&contentType=json`;
+  const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${cityName}?unitGroup=metric&key=${KEY}&contentType=json`;
   try {
     const res = await fetch(url);
     if (res.status === 400) {
@@ -174,18 +175,14 @@ async function getIcon(name) {
   } else {
     cityName = name;
   }
-  const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${cityName}?unitGroup=metric&key=6Q793XTBFCDYVQ5E635KCRYQC&contentType=json`;
+  const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${cityName}?unitGroup=metric&key=${KEY}&contentType=json`;
 
   try {
     const res = await fetch(url);
     const data = await res.json();
-    console.log(data)
     for (let i = 0; i < 6; i++) {
-      console.log(data.days[i].icon)
       const currentId = findId(data.days[i].icon);
-      console.log(currentId);
-      const response = await fetch(`https://api.giphy.com/v1/gifs/${currentId}?api_key=tUl7YdgQWIEQr5EAdB9l7F5pWOnVZM6n`);
-      console.log(response)
+      const response = await fetch(`https://api.giphy.com/v1/gifs/${currentId}?api_key=${API_KEY}`);
       let datas;
       switch (response.status) {
         case 200:
@@ -244,5 +241,5 @@ function getDate() {
   const mins = date.getMinutes().toString().padStart(2, "0");
   const hours = date.getHours().toString().padStart(2, "0");
   const currentDate = `${hours}:${mins}`;
-  info.textContent = `Wheather-now-today hour: ${currentDate}`;
+  info.textContent = `Weather-now-today hour: ${currentDate}`;
 }
