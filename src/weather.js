@@ -180,7 +180,7 @@ async function getIcon(name) {
   try {
     const res = await fetch(url);
     const data = await res.json();
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < iconsArray.length; i++) {
       const currentId = findId(data.days[i].icon);
       const response = await fetch(`https://api.giphy.com/v1/gifs/${currentId}?api_key=${API_KEY}`);
       let datas;
